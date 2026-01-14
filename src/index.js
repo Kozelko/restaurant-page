@@ -1,18 +1,25 @@
-import './homepage.js';
+import './styles.css';
+import { loadHomepage } from './homepage.js';
+import { loadMenu } from './menu.js';
+import { loadAbout } from './about.js';
 
 const nav = document.getElementById('nav');
 
 function initializeNav() {
     const buttons = nav.getElementsByTagName('button');
+
     buttons[0].addEventListener('click', () => {
-        import('./homepage.js');
+        loadHomepage();
     });
+
     buttons[1].addEventListener('click', () => {
-        import('./menu.js');
+        loadMenu();
     });
+
     buttons[2].addEventListener('click', () => {
-        import('./about.js');
+        loadAbout();
     });
 }
 
 initializeNav();
+loadHomepage();
